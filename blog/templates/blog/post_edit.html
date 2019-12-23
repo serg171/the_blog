@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>Новый пост</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="save_button" class="save btn btn-default">Сохранить черновик</button>
+        <button type="submit" name="publicate_button" class="save btn btn-default">Опубликовать</button>
+    </form>
+{% endblock %}
